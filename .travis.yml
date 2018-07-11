@@ -5,7 +5,7 @@ cache:
 services:
   - postgresql
 addons:
-  postgresql: '9.3.5'
+  postgresql: '9.4'
 env:
   global:
     - ENABLE_COVERAGE=true
