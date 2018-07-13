@@ -14,7 +14,7 @@ RSpec.describe 'Delete an atos file', type: :request do
     end
   end
 
-  it 'returns with 204' do
+  it 'returns with 200' do
     # Setup - create 2 files
     files = create_list(:exported_file, 2, :example_zip_file)
 
@@ -22,7 +22,7 @@ RSpec.describe 'Delete an atos file', type: :request do
     post "/atos_api/v1/filetransfer/delete", params: { filename: files.last.filename }
 
     # Assert - make sure we respond correctly
-    expect(response).to have_http_status(:no_content)
+    expect(response).to have_http_status(:ok)
   end
 
   it 'return with 404 if the filename does not exist' do

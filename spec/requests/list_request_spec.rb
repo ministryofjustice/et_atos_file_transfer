@@ -5,4 +5,10 @@ RSpec.describe 'List all atos files', type: :request do
     get '/atos_api/v1/filetransfer/list'
     expect(response.body.lines.map {|l| l.gsub(/\n$/, '')}).to eql files.map(&:filename)
   end
+
+  it 'returns a 200 status code' do
+    create_list(:exported_file, 2, :example_zip_file)
+    get '/atos_api/v1/filetransfer/list'
+    expect(response).to have_http_status(:ok)
+  end
 end
