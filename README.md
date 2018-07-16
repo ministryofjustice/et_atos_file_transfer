@@ -3,11 +3,8 @@
 This gem is intended to be used in the Employment Tribunal JADU Replacement project. It keeps the ATOS interface separate with the
 goal of being able to use it as a standalone rack app OR just mount it inside a rails app.
 
-However, the first stage is just to use it in a rails app - with the dependencies satisfied by that (listed below).
-If a decision is made to keep it properly isolated for security then with a little bit more work to provide the dependencies,
-it could be used as a standalone rack app.
+## Installation - For use as a mountable engine inside another rails application
 
-## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -22,6 +19,50 @@ Or install it yourself as:
 
 $ gem install et_atos_file_transfer
 
+## Running Standalone
+
+First, clone this repository into et_atos_file_transfer
+
+Then
+
+```
+
+cd et_atos_file_transfer/rails_container
+
+./bin/setup
+
+```
+
+Then, setup the following environment variables
+
+Required
+
+SECRET_KEY_BASE - Just make up a random 128 character hex string
+
+DB_HOST - Must be the same as for the API service (defaults to localhost)
+DB_USERNAME - Must be the same as for the API service (defaults to postgres)
+DB_PASSWORD - Must be the same as for the API service (defaults to postgres)
+DB_PORT - Must be the same as for the API service (defaults to 5432)
+
+
+AWS_ACCESS_KEY_ID - Must be the same as for the API service
+AWS_SECRET_ACCESS_KEY - Must be the same as for the API service
+AWS_REGION - Must be the same as for the API service
+S3_UPLOAD_BUCKET - Must be the same as for the API service
+
+Optional - only needed if using our development S3 server (minio)
+
+AWS_ENDPOINT - Must be the same as for the API service
+AWS_S3_FORCE_PATH_STYLE - Must be the same as for the API service
+
+
+```
+
+./bin/rails s
+
+
+
+```
 ## Dependencies
 
 Currently, the application relies on the following from the app where it is mounted
