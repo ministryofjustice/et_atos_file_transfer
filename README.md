@@ -39,6 +39,12 @@ Required
 
 SECRET_KEY_BASE - Just make up a random 128 character hex string
 
+DB_HOST - Must be the same as for the API service (defaults to localhost)
+DB_USERNAME - Must be the same as for the API service (defaults to postgres)
+DB_PASSWORD - Must be the same as for the API service (defaults to postgres)
+DB_PORT - Must be the same as for the API service (defaults to 5432)
+
+
 AWS_ACCESS_KEY_ID - Must be the same as for the API service
 AWS_SECRET_ACCESS_KEY - Must be the same as for the API service
 AWS_REGION - Must be the same as for the API service
