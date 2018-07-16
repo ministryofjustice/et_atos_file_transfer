@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.2"
+  s.add_dependency 'unicorn', '~> 5.4'
+  s.add_dependency 'aws-sdk-s3', '~> 1.13'
 
   s.add_development_dependency "pg"
 end

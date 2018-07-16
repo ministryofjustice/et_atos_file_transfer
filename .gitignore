@@ -3,3 +3,7 @@ spec/dummy/tmp/*
 !spec/dummy/log/.keep
 !spec/dummy/tmp/.keep
 .idea/*
+lib/rails_container/log/*
+lib/rails_container/tmp/*
+!lib/rails_container/log/.keep
+!lib/rails_container/tmp/.keep
