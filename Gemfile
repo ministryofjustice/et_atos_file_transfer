@@ -15,6 +15,9 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.10'
 end
