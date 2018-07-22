@@ -30,5 +30,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'unicorn', '~> 5.4'
   s.add_dependency 'aws-sdk-s3', '~> 1.13'
 
-  s.add_development_dependency "pg"
+  s.add_dependency "pg"
 end
