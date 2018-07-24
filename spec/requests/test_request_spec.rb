@@ -8,7 +8,7 @@ RSpec.describe 'Test request endpoint', type: :request do
       }
     end
     it 'responds with a head 200' do
-      get '/atos_api/v1/filetransfer/test', headers: default_headers do
+      get '/test', headers: default_headers do
         expect(response).to have_http_status(:ok)
       end
     end
@@ -23,7 +23,7 @@ RSpec.describe 'Test request endpoint', type: :request do
       }
     end
     it 'responds with a head 404' do
-      get '/atos_api/v1/filetransfer/test', headers: default_headers
+      get '/test', headers: default_headers
       expect(response).to have_http_status(:not_found)
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe 'Test request endpoint', type: :request do
   context 'without any authorization header' do
     include_context 'without error rescue'
     it 'responds with a head 404' do
-      get '/atos_api/v1/filetransfer/test'
+      get '/test'
       expect(response).to have_http_status(:not_found)
     end
   end

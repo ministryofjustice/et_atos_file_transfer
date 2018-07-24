@@ -9,13 +9,13 @@ RSpec.describe 'List all atos files', type: :request do
     end
     it 'lists 2 files' do
       files = create_list(:exported_file, 2, :example_zip_file)
-      get '/atos_api/v1/filetransfer/list', headers: default_headers
+      get '/list', headers: default_headers
       expect(response.body.lines.map {|l| l.gsub(/\n$/, '')}).to eql files.map(&:filename)
     end
 
     it 'returns a 200 status code' do
       create_list(:exported_file, 2, :example_zip_file)
-      get '/atos_api/v1/filetransfer/list', headers: default_headers
+      get '/list', headers: default_headers
       expect(response).to have_http_status(:ok)
     end
   end
@@ -30,7 +30,7 @@ RSpec.describe 'List all atos files', type: :request do
     end
     it 'returns a 404' do
       create_list(:exported_file, 2, :example_zip_file)
-      get '/atos_api/v1/filetransfer/list', headers: default_headers
+      get '/list', headers: default_headers
       expect(response).to have_http_status(:not_found)
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe 'List all atos files', type: :request do
     include_context 'without error rescue'
     it 'returns a 404' do
       create_list(:exported_file, 2, :example_zip_file)
-      get '/atos_api/v1/filetransfer/list'
+      get '/list'
       expect(response).to have_http_status(:not_found)
     end
   end

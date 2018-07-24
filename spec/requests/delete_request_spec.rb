@@ -12,7 +12,7 @@ RSpec.describe 'Delete an atos file', type: :request do
       files = create_list(:exported_file, 2, :example_zip_file)
 
       # Act - delete the last one
-      post "/atos_api/v1/filetransfer/delete",
+      post "/delete",
            params: { filename: files.last.filename },
            headers: default_headers
 
@@ -28,7 +28,7 @@ RSpec.describe 'Delete an atos file', type: :request do
       files = create_list(:exported_file, 2, :example_zip_file)
 
       # Act - delete the last one
-      post "/atos_api/v1/filetransfer/delete",
+      post "/delete",
            params: { filename: files.last.filename },
            headers: default_headers
 
@@ -38,7 +38,7 @@ RSpec.describe 'Delete an atos file', type: :request do
 
     it 'return with 404 if the filename does not exist' do
       # Act - delete something that doesnt exists
-      post "/atos_api/v1/filetransfer/delete",
+      post "/delete",
            params: { filename: 'doesntexist' },
            headers: default_headers
 
@@ -62,7 +62,7 @@ RSpec.describe 'Delete an atos file', type: :request do
       files = create_list(:exported_file, 2, :example_zip_file)
 
       # Act - delete the last one
-      post "/atos_api/v1/filetransfer/delete",
+      post "/delete",
            params: { filename: files.last.filename },
            headers: default_headers
 
@@ -81,7 +81,7 @@ RSpec.describe 'Delete an atos file', type: :request do
       files = create_list(:exported_file, 2, :example_zip_file)
 
       # Act - delete the last one
-      post "/atos_api/v1/filetransfer/delete",
+      post "/delete",
            params: { filename: files.last.filename },
            headers: default_headers
 
