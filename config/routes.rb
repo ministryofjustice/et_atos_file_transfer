@@ -9,5 +9,6 @@ EtAtosFileTransfer::Engine.routes.draw do
 
     end
   end
-
+  get '/ping' => 'status#ping'
+  get '/healthcheck' => 'status#healthcheck'
 end
