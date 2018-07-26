@@ -3,6 +3,7 @@ PATH
   specs:
     et_atos_file_transfer (0.1.0)
       aws-sdk-s3 (~> 1.13)
+      jbuilder (~> 2.7)
       pg
       rails (~> 5.2)
       unicorn (~> 5.4)
@@ -81,6 +82,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.7.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
     jmespath (1.4.0)
     kgio (2.11.2)
     loofah (2.2.2)
@@ -95,6 +99,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -172,4 +177,4 @@ DEPENDENCIES
   rspec-rails (~> 3.7, >= 3.7.2)
 
 BUNDLED WITH
-   1.16.2
+   1.16.3

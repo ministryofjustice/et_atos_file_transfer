@@ -10,7 +10,7 @@ RSpec.describe 'Upload file', type: :request do
 
     it 'just absorbs the request - does nothing apart from returns a 200' do
       # Act - call the endpoint
-      post "/atos_api/v1/filetransfer/upload",
+      post "/upload",
            params: { filename: 'whoknows' },
            headers: default_headers
 
@@ -30,7 +30,7 @@ RSpec.describe 'Upload file', type: :request do
 
     it 'returns a 404' do
       # Act - call the endpoint
-      post "/atos_api/v1/filetransfer/upload",
+      post "/upload",
            params: { filename: 'whoknows' },
            headers: default_headers
 
@@ -45,7 +45,7 @@ RSpec.describe 'Upload file', type: :request do
 
     it 'returns a 404' do
       # Act - call the endpoint
-      post "/atos_api/v1/filetransfer/upload",
+      post "/upload",
            params: { filename: 'whoknows' },
            headers: default_headers
 

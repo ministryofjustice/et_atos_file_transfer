@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount EtAtosFileTransfer::Engine => "/atos_api"
+  mount EtAtosFileTransfer::Engine => "/"
 end
