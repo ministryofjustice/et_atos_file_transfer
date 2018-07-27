@@ -19,7 +19,7 @@ module EtAtosFileTransfer
         file = EtAtosFileTransfer::ExportedFile.find_by(filename: filename)
         return not_found if file.nil?
         file.destroy
-        head :no_content
+        head :ok
       end
 
       def upload
