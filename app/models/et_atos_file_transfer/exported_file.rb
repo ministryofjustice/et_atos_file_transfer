@@ -4,6 +4,8 @@ module EtAtosFileTransfer
 
     has_one_attached :file
 
+    scope :for_system, -> (system) { where(external_system_id: system.id) }
+
     # Downloads the stored file to the local file system
     #
     # @param [String] filename The filename to download to

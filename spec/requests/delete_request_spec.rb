@@ -10,7 +10,7 @@ RSpec.describe 'Delete an atos file', type: :request do
     end
     it 'deletes an existing file' do
       # Setup - create 2 files
-      files = create_list(:exported_file, 2, :example_zip_file)
+      files = create_list(:exported_file, 2, :example_zip_file, external_system_id: external_system_atos.id)
 
       # Act - delete the last one
       post "/delete",
@@ -26,7 +26,7 @@ RSpec.describe 'Delete an atos file', type: :request do
 
     it 'returns with 200' do
       # Setup - create 2 files
-      files = create_list(:exported_file, 2, :example_zip_file)
+      files = create_list(:exported_file, 2, :example_zip_file, external_system_id: external_system_atos.id)
 
       # Act - delete the last one
       post "/delete",
@@ -46,6 +46,19 @@ RSpec.describe 'Delete an atos file', type: :request do
       # Assert - make sure we respond correctly
       expect(response).to have_http_status(:not_found)
     end
+
+    it 'returns with 404 if the file exists but in the wrong external system' do
+      # Setup - create 2 files
+      files = create_list(:exported_file, 2, :example_zip_file, external_system_id: external_system_atos_secondary.id)
+
+      # Act - delete the last one
+      post "/delete",
+        params: { filename: files.last.filename },
+        headers: default_headers
+
+      # Assert - make sure we respond correctly
+      expect(response).to have_http_status(:not_found)
+    end
   end
 
   context 'with invalid username and password' do
@@ -61,7 +74,7 @@ RSpec.describe 'Delete an atos file', type: :request do
 
     it 'returns with 404' do
       # Setup - create 2 files
-      files = create_list(:exported_file, 2, :example_zip_file)
+      files = create_list(:exported_file, 2, :example_zip_file, external_system_id: external_system_atos.id)
 
       # Act - delete the last one
       post "/delete",
@@ -81,7 +94,7 @@ RSpec.describe 'Delete an atos file', type: :request do
 
     it 'returns with 404' do
       # Setup - create 2 files
-      files = create_list(:exported_file, 2, :example_zip_file)
+      files = create_list(:exported_file, 2, :example_zip_file, external_system_id: external_system_atos.id)
 
       # Act - delete the last one
       post "/delete",

@@ -12,7 +12,7 @@ RSpec.describe 'Download an atos zip file', type: :request do
     it 'downloads a file' do
       # Arrange - Setup a zip file for downloading
       file_path = File.absolute_path(File.join('..', 'fixtures', 'example_zip_file.zip') ,__dir__)
-      zip_file = create(:exported_file, :example_zip_file, file_path: file_path)
+      zip_file = create(:exported_file, :example_zip_file, file_path: file_path, external_system_id: external_system_atos.id)
 
       # Act - Download it
       get "/download/#{zip_file.filename}", headers: default_headers
@@ -24,7 +24,7 @@ RSpec.describe 'Download an atos zip file', type: :request do
     it 'returns a 200' do
       # Arrange - Setup a zip file for downloading
       file_path = File.absolute_path(File.join('..', 'fixtures', 'example_zip_file.zip') ,__dir__)
-      zip_file = create(:exported_file, :example_zip_file, file_path: file_path)
+      zip_file = create(:exported_file, :example_zip_file, file_path: file_path, external_system_id: external_system_atos.id)
 
       # Act - Download it
       get "/download/#{zip_file.filename}", headers: default_headers
@@ -38,6 +38,18 @@ RSpec.describe 'Download an atos zip file', type: :request do
       get "/download/can-be-anything", headers: default_headers
 
       # Assert - Check the response is a 404
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'returns a 404 if the file exists but in the wrong external system' do
+      # Arrange - Setup a zip file for downloading
+      file_path = File.absolute_path(File.join('..', 'fixtures', 'example_zip_file.zip') ,__dir__)
+      zip_file = create(:exported_file, :example_zip_file, file_path: file_path, external_system_id: external_system_atos_secondary.id)
+
+      # Act - Download it
+      get "/download/#{zip_file.filename}", headers: default_headers
+
+      # Assert - Check the response status
       expect(response).to have_http_status(:not_found)
     end
   end
@@ -54,7 +66,7 @@ RSpec.describe 'Download an atos zip file', type: :request do
     it 'responds with a head 404' do
       # Arrange - Setup a zip file for downloading
       file_path = File.absolute_path(File.join('..', 'fixtures', 'example_zip_file.zip') ,__dir__)
-      zip_file = create(:exported_file, :example_zip_file, file_path: file_path)
+      zip_file = create(:exported_file, :example_zip_file, file_path: file_path, external_system_id: external_system_atos.id)
 
       # Act - Try and download a file
       get "/download/#{zip_file.filename}", headers: default_headers
@@ -71,7 +83,7 @@ RSpec.describe 'Download an atos zip file', type: :request do
     it 'responds with a head 404' do
       # Arrange - Setup a zip file for downloading
       file_path = File.absolute_path(File.join('..', 'fixtures', 'example_zip_file.zip') ,__dir__)
-      zip_file = create(:exported_file, :example_zip_file, file_path: file_path)
+      zip_file = create(:exported_file, :example_zip_file, file_path: file_path, external_system_id: external_system_atos.id)
 
       # Act - Try and download a file
       get "/download/#{zip_file.filename}", headers: default_headers

@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 2018_11_26_123456) do
   create_table "exported_files", force: :cascade do |t|
     t.string "filename"
     t.string "content_type"
+    t.bigint "external_system_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["external_system_id"], name: "index_exported_files_on_external_system_id"
   end
 
   create_table "external_system_configurations", force: :cascade do |t|
