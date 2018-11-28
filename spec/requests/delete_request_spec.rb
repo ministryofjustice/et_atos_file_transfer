@@ -1,7 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'Delete an atos file', type: :request do
   context 'with valid username and password' do
-    include_context 'with valid login'
+    include_context 'with database config set'
+    include_context 'with valid login for atos'
     let(:default_headers) do
       {
           'Authorization' => auth_header_value
@@ -48,6 +49,7 @@ RSpec.describe 'Delete an atos file', type: :request do
   end
 
   context 'with invalid username and password' do
+    include_context 'with database config set'
     include_context 'with invalid login'
     include_context 'without error rescue'
 
@@ -72,6 +74,7 @@ RSpec.describe 'Delete an atos file', type: :request do
   end
 
   context 'without any authorization header' do
+    include_context 'with database config set'
     include_context 'without error rescue'
 
     let(:default_headers) { {} }

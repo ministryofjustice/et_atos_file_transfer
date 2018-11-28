@@ -2,8 +2,9 @@ module EtAtosFileTransfer
   class BasicConstraint
     def self.matches?(request)
       ::ActionController::HttpAuthentication::Basic.authenticate(request) do |username, password|
-        username == Rails.configuration.et_atos_api.username &&
-          password == Rails.configuration.et_atos_api.password
+        ExternalSystem.atos_only.to_a.any? do |s|
+          s.config_hash[:username] == username && s.config_hash[:password] == password
+        end
       end
     end
   end
