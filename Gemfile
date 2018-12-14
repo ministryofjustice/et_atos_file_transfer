@@ -16,5 +16,5 @@ gemspec
 gem 'rspec-rails', '~> 3.8'
 
 group :development, :test do
-  gem 'factory_bot_rails', '~> 4.10'
+  gem 'factory_bot_rails', '~> 4.11'
 end
