@@ -13,8 +13,8 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+gem 'rspec-rails', '~> 3.8'
 
 group :development, :test do
-  gem 'factory_bot_rails', '~> 4.10'
+  gem 'factory_bot_rails', '~> 4.11'
 end
