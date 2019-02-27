@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ministryofjustice/azure_env_secrets.git
+  revision: 73d252c53b9b8d3db448d7515896ab7d7c20354e
+  tag: v0.1.2
+  specs:
+    azure_env_secrets (0.1.2)
+
 PATH
   remote: .
   specs:
@@ -187,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  azure_env_secrets!
   et_atos_file_transfer!
   factory_bot_rails (~> 4.11)
   rspec-rails (~> 3.8)

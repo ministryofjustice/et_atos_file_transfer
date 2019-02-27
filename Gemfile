@@ -15,6 +15,9 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 gem 'rspec-rails', '~> 3.8'
 
+# Azure deployment so we need this
+gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.2'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.11'
 end
