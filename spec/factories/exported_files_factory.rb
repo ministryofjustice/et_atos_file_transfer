@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :exported_file, class: 'EtAtosFileTransfer::ExportedFile' do
     transient do
-      file_path nil
+      file_path { nil }
     end
 
     trait :example_zip_file do
