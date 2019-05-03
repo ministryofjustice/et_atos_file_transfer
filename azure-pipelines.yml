@@ -99,6 +99,7 @@ jobs:
     displayName: 'Build an image'
     inputs:
       imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
+      arguments: 'APPVERSION=$(getDockerTag.DOCKER_TAG)'
 
   - task: Docker@1
     displayName: 'Tag image'
