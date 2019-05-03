@@ -84,7 +84,9 @@ jobs:
   - bash: |
       repo_sha=$(git rev-parse --verify HEAD)
       docker_image_tag_sha=${repo_sha:0:7}
+      current_date=`date +"%Y-%m-%d %T"`
       echo "##vso[task.setvariable variable=DOCKER_TAG;isOutput=true]$(Build.SourceBranchName)-${docker_image_tag_sha}"
+      echo "##vso[task.setvariable variable=BUILD_DATE;isOutput=true]$(current_date)"
     displayName: 'Get Docker Tag'
     name: 'getDockerTag'
 
@@ -101,7 +103,7 @@ jobs:
       imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
       azureSubscriptionEndpoint: '$(azure.subscription.endpoint)'
       azureContainerRegistry: $(azure.container.registry)
-      arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) APP_BUILD_TAG=$(Build.SourceBranchName)-$(Build.SourceVersion)$(Rev:.r) APP_GIT_COMMIT=$(Build.SourceVersion) APP_BUILD_DATE=$(Date:MMddyy)'
+      arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) APP_BUILD_TAG=$(Build.SourceBranchName)-$(Build.SourceVersion) APP_GIT_COMMIT=$(Build.SourceVersion) APP_BUILD_DATE=$(getDockerTag.BUILD_DATE)'
 
   - task: Docker@1
     displayName: 'Tag image'
