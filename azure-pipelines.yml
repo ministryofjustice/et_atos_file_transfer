@@ -21,7 +21,7 @@ pr:
 variables:
   application.name: 'et-atos-api'
   azure.subscription.endpoint: 'hmcts-pet'
-  azure.container.registry: 'employmenttribunal.azurecr.io'
+  azure.container.registry: ''
 
 jobs:
 - job: testApp
