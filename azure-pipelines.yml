@@ -10,6 +10,7 @@ trigger:
   branches:
     include:
       - develop
+      - devops
 
 pr:
   autoCancel: true
@@ -21,7 +22,7 @@ pr:
 variables:
   application.name: 'et-atos-api'
   azure.subscription.endpoint: 'hmcts-pet'
-  azure.container.registry: ''
+ # azure.container.registry: ''
 
 jobs:
 - job: testApp
