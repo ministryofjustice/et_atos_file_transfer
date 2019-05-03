@@ -99,7 +99,9 @@ jobs:
     displayName: 'Build an image'
     inputs:
       imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
-      arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) APP_BUILD_TAG $(SourceBranchName)-$(Build.SourceVersion)$(rev:.r) APP_GIT_COMMIT $(Build.SourceVersion) APP_BUILD_DATE $(Year:yyyy)-$(Month)-$(DayOfMonth)T$(Hours):$(Minutes):$(Seconds)'
+      azureSubscriptionEndpoint: '$(azure.subscription.endpoint)'
+      azureContainerRegistry: $(azure.container.registry)
+      arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) APP_BUILD_TAG=$(SourceBranchName)-$(Build.SourceVersion)$(rev:.r) APP_GIT_COMMIT=$(Build.SourceVersion) APP_BUILD_DATE=$(Year:yyyy)-$(Month)-$(DayOfMonth)T$(Hours):$(Minutes):$(Seconds)'
 
   - task: Docker@1
     displayName: 'Tag image'
