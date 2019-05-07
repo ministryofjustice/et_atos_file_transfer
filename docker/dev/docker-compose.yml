@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.6
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    networks:
+      - api
+
+volumes:
+  rubygems_cache:
+  azurite_data:
+networks:
+  api:
