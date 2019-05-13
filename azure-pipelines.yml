@@ -11,19 +11,19 @@ trigger:
     include:
       - develop
 
-# pr:
-#   autoCancel: true
-#   branches:
-#     include:
-#       - develop
-#       - feature/*
+pr:
+  autoCancel: true
+  branches:
+    include:
+      - develop
+      - feature/*
 
 variables:
   application.name: 'et-atos-api'
   azure.subscription.endpoint: 'hmcts-pet'
 
 jobs:
-- job: testApp
+- job: TestApplication
 
   pool:
     vmImage: 'Ubuntu-16.04'
@@ -75,7 +75,8 @@ jobs:
 
 
 - job: BuildAndPushImage
-  dependsOn: testApp
+  dependsOn: TestApplication
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
   pool:
     name: hmcts-pet
   steps:
