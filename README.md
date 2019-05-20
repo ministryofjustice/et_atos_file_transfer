@@ -1,5 +1,7 @@
 # ET to ATOS File Transfer
 
+[![Build Status](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_apis/build/status/et-atos-api-file-transfer?branchName=develop)](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_build/latest?definitionId=15&branchName=develop)
+
 This gem is intended to be used in the Employment Tribunal JADU Replacement project. It keeps the ATOS interface separate with the
 goal of being able to use it as a standalone rack app OR just mount it inside a rails app.
 
