@@ -46,17 +46,15 @@ DB_USERNAME - Must be the same as for the API service (defaults to postgres)
 DB_PASSWORD - Must be the same as for the API service (defaults to postgres)
 DB_PORT - Must be the same as for the API service (defaults to 5432)
 
+AZURE_STORAGE_ACCOUNT - Must be the same as for the API service (defaults to the azurite standard development account)
+AZURE_STORAGE_ACCESS_KEY - Must be the same as for the API service (defaults to the azurite standard development key)
+AZURE_STORAGE_CONTAINER - Must be the same as for the API service (defaults to et_api_container the same as the API)
 
-AWS_ACCESS_KEY_ID - Must be the same as for the API service
-AWS_SECRET_ACCESS_KEY - Must be the same as for the API service
-AWS_REGION - Must be the same as for the API service
-S3_UPLOAD_BUCKET - Must be the same as for the API service
+Optional
 
-Optional - only needed if using our development S3 server (minio)
 
-AWS_ENDPOINT - Must be the same as for the API service
-AWS_S3_FORCE_PATH_STYLE - Must be the same as for the API service
-
+AZURE_STORAGE_BLOB_FORCE_PATH_STYLE - Used in development / test environments to specify that that container name is part of the path instead of a subdomain
+AZURE_STORAGE_BLOB_HOST - Used in development / test environments to point to the azurite server
 
 ```
 
