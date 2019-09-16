@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "> 5.2"
-  s.add_dependency 'unicorn', '~> 5.4'
+  s.add_dependency 'iodine', '~> 0.7'
   s.add_dependency 'jbuilder', '~> 2.7'
   s.add_dependency 'azure-storage', '~> 0.15.0.preview'
 
