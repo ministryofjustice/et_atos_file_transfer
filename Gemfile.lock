@@ -87,9 +87,9 @@ GEM
     crass (1.0.4)
     diff-lcs (1.3)
     erubi (1.9.0)
-    factory_bot (5.1.0)
+    factory_bot (5.1.1)
       activesupport (>= 4.2.0)
-    factory_bot_rails (5.1.0)
+    factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
     faraday (0.15.4)
@@ -103,7 +103,7 @@ GEM
     iodine (0.7.33)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
-    loofah (2.2.3)
+    loofah (2.3.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -114,7 +114,7 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.12.0)
+    minitest (5.12.2)
     multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.4)
@@ -189,7 +189,7 @@ PLATFORMS
 DEPENDENCIES
   azure_env_secrets!
   et_atos_file_transfer!
-  factory_bot_rails (~> 5.0)
+  factory_bot_rails (~> 5.1)
   rspec-rails (~> 3.8)
 
 BUNDLED WITH
