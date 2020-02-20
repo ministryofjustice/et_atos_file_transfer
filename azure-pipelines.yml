@@ -55,9 +55,9 @@ jobs:
       export DB_USERNAME=postgres
       export DB_PORT=5433
       ./bin/dev/docker-support-services up -d
-      ./bin/wait-for-it.sh localhost:5433
+      ./bin/wait-for-it.sh localhost:5433 -t 120
       sleep 5
-      ./bin/wait-for-it.sh localhost:5433
+      ./bin/wait-for-it.sh localhost:5433 -t 30
       RAILS_ENV=test bundle install && bundle exec rails db:create db:migrate
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       chmod +x ./cc-test-reporter
