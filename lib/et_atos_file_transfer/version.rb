@@ -1,3 +1,3 @@
 module EtAtosFileTransfer
-  VERSION = '0.1.3'
+  VERSION = '1.3.9'
 end
