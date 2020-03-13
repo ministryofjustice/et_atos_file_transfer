@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hmcts/et-azure-insights.git
-  revision: 9c8a6836b895506538c76868cb7e971d98cf996d
-  tag: v0.2.11
+  revision: b2d677431b449062c6f7cb8a0cae6b28c6f76d65
+  tag: v0.2.12
   specs:
-    et_azure_insights (0.2.11)
+    et_azure_insights (0.2.12)
       application_insights (~> 0.5.7)
 
 GIT
@@ -205,7 +205,7 @@ DEPENDENCIES
   application_insights!
   azure_env_secrets!
   et_atos_file_transfer!
-  et_azure_insights (= 0.2.11)!
+  et_azure_insights (= 0.2.12)!
   factory_bot_rails (~> 5.0)
   rspec-rails (~> 3.8)
 
