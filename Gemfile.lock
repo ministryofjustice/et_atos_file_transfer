@@ -132,7 +132,7 @@ GEM
     minitest (5.14.0)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.8)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (1.2.2)
     rack (2.2.2)
@@ -167,13 +167,13 @@ GEM
     rake (13.0.1)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
-    rspec-expectations (3.9.0)
+    rspec-expectations (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
-    rspec-rails (3.9.0)
+    rspec-rails (3.9.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -196,7 +196,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    zeitwerk (2.2.2)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
@@ -207,7 +207,7 @@ DEPENDENCIES
   et_atos_file_transfer!
   et_azure_insights (= 0.2.12)!
   factory_bot_rails (~> 5.0)
-  rspec-rails (~> 3.8)
+  rspec-rails (~> 3.9)
 
 BUNDLED WITH
    1.17.3
