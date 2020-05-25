@@ -115,7 +115,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    iodine (0.7.38)
+    iodine (0.7.40)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     loofah (2.4.0)
