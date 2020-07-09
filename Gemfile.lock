@@ -102,10 +102,10 @@ GEM
     crass (1.0.6)
     diff-lcs (1.4.2)
     erubi (1.9.0)
-    factory_bot (6.0.2)
+    factory_bot (6.1.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.0.0)
-      factory_bot (~> 6.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
@@ -132,7 +132,7 @@ GEM
     minitest (5.14.1)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
     rack (2.2.3)
@@ -196,7 +196,7 @@ GEM
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
@@ -206,7 +206,7 @@ DEPENDENCIES
   azure_env_secrets!
   et_atos_file_transfer!
   et_azure_insights (= 0.2.12)!
-  factory_bot_rails (~> 6.0)
+  factory_bot_rails (~> 6.1)
   rspec-rails (~> 4.0)
 
 BUNDLED WITH
