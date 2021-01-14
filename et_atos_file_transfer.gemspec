@@ -28,9 +28,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "> 5.2"
   s.add_dependency 'iodine', '~> 0.7'
-  s.add_dependency 'jbuilder', '~> 2.7'
-  s.add_dependency 'azure-storage', '~> 0.15.0.preview'
-
-
+  s.add_dependency 'jbuilder', '~> 2.10'
+  s.add_dependency 'azure-storage-blob', '~> 2.0', '>= 2.0.1'
   s.add_dependency "pg"
 end
