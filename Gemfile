@@ -22,5 +22,5 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.1'
 end
 
-gem 'et_azure_insights', '0.2.12', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.12'
+gem 'et_azure_insights', '0.2.14', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.14'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
