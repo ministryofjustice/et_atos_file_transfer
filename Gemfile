@@ -19,7 +19,7 @@ gem 'rspec-rails', '~> 4.0'
 gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
 
 group :development, :test do
-  gem 'factory_bot_rails', '~> 6.1'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 gem 'et_azure_insights', '0.2.12', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.12'
